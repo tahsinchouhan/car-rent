@@ -44,7 +44,7 @@ export default function Navbar() {
                     />
 
                     <span className="self-center text-2xl font-serif whitespace-nowrap dark:text-white ml-3">
-                      Prime Drive
+                      Premium Cabs Raipur
                     </span>
                   </div>
                 </Link>

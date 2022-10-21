@@ -10,7 +10,7 @@ const Footer = () => {
             <a className="flex items-center mb-4 sm:mb-0">
               <img src="/images/logo.png" className="mr-3 h-8" alt="Logo" />
               <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-                Prime Drive
+                Preminum Cabs
               </span>
             </a>
           </Link>
@@ -38,7 +38,7 @@ const Footer = () => {
           <Link href="/">
             <div>
               <Link href="">
-                <a className="hover:underline">Prime Drive™</a>
+                <a className="hover:underline">Premium Cabs Raipur™</a>
               </Link>
               . All Rights Reserved.
             </div>
