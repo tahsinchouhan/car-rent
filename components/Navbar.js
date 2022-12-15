@@ -18,7 +18,7 @@ export default function Navbar() {
       {({ open }) => (
         <>
           <div className="mx-auto  px-2 sm:px-6 lg:px-8">
-            <div className="relative flex h-16 items-center justify-between">
+            <div className="relative flex h-20 items-center justify-between">
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden justify-end w-full">
                 <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                   <span className="sr-only">Open main menu</span>
@@ -33,19 +33,15 @@ export default function Navbar() {
                 <Link href="/">
                   <div className="flex flex-shrink-0 items-center cursor-pointer">
                     <img
-                      className="block h-10 w-auto lg:hidden"
-                      src="/images/logo.png"
+                      className="block h-auto w-64 lg:hidden"
+                      src="/images/newlogo-removebg.png"
                       alt="Car Rent"
                     />
                     <img
-                      className="hidden h-10 w-auto lg:block"
-                      src="/images/logo.png"
+                      className="hidden h-auto w-64 lg:block"
+                      src="/images/newlogo-removebg.png"
                       alt="Car Rent"
                     />
-
-                    <span className="self-center text-2xl font-serif whitespace-nowrap dark:text-white ml-3">
-                      Premium Cabs Raipur
-                    </span>
                   </div>
                 </Link>
                 <div className="hidden sm:ml-6 sm:block">
