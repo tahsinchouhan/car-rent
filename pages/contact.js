@@ -1,6 +1,47 @@
+import emailjs from "@emailjs/browser";
+import { useRouter } from "next/router";
 import React from "react";
 
-const contact = () => {
+const Contact = () => {
+  const router = useRouter();
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+    // get data from form
+    const name = e.target.elements.name.value;
+    const email = e.target.elements.email.value;
+    const subject = e.target.elements.subject.value;
+    const message = e.target.elements.message.value;
+
+    console.log(name, email, subject, message);
+    sendEmail({ name, email, subject, message });
+  };
+
+  const sendEmail = ({ name, email, subject, message }) => {
+    var templatePrams = {
+      name: name,
+      email: email,
+      subject: subject,
+      message: message,
+    };
+    emailjs
+      .send(
+        "service_iy22fvk",
+        "template_n1o1ook",
+        templatePrams,
+        "hdO9ge3e2RfKQzBb4"
+      )
+      .then(
+        (result) => {
+          console.log(result, "success");
+          router.push("/thankyou");
+        },
+        (error) => {
+          console.log(error, "error");
+        }
+      );
+  };
+
   return (
     <div>
       <section className="bg-white w-full mx-auto flex sm:flex-row flex-col-reverse ">
@@ -23,7 +64,21 @@ const contact = () => {
             Got a issue? Want to send feedback about a beta feature? Need
             details about our Business plan? Let us know.
           </p>
-          <form action="#" className="space-y-8">
+          <form onSubmit={submitHandler} className="space-y-8">
+            <div>
+              <label
+                htmlFor=""
+                className="block mb-2 text-sm font-medium text-gray-900 "
+              >
+                Your Name
+              </label>
+              <input
+                id="name"
+                className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 "
+                placeholder="name"
+                required
+              />
+            </div>
             <div>
               <label
                 htmlFor="email"
@@ -82,4 +137,4 @@ const contact = () => {
   );
 };
 
-export default contact;
+export default Contact;
