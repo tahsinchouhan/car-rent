@@ -1,11 +1,12 @@
 import { Disclosure } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import Image from "next/image";
 import Link from "next/link";
 
 const navigation = [
   { name: "Home", href: "/", current: true },
   { name: "Contact Us", href: "/contact", current: false },
-  { name: "About Us", href: "/", current: false },
+  { name: "List You Car Here", href: "/listrequest", current: false },
 ];
 
 function classNames(...classes) {
@@ -32,13 +33,10 @@ export default function Navbar() {
               <div className="flex  items-center sm:items-stretch sm:justify-between w-full">
                 <Link href="/">
                   <div className="flex flex-shrink-0 items-center cursor-pointer">
-                    <img
-                      className="block h-auto w-64 lg:hidden"
-                      src="/images/newlogo-removebg.png"
-                      alt="Car Rent"
-                    />
-                    <img
-                      className="hidden h-auto w-64 lg:block"
+                    <Image
+                      width={256}
+                      height={50}
+                      className=" h-auto w-64 "
                       src="/images/newlogo-removebg.png"
                       alt="Car Rent"
                     />
